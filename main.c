@@ -10,16 +10,16 @@
 int main( void )
 {
 
-	int i = 0;
+    int i = 0;
 
-	printf("Get item: ");
+    printf("Get item: ");
 
     fflush(stdout);
 
-	scanf("%d", &i);
+    scanf("%d", &i);
 
-	printf("%d\n", i);
+    printf("%d\n", i);
 
-	return 0;
+    return 0;
 
 }
