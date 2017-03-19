@@ -6,15 +6,17 @@
  */
 
 #include <stdio.h>
+#include "arrays.h"
+
+#define AVOID_INTERACTION 1
 
 static void sum(int *a, int *b)
 {
 	*a += *b;
 }
 
-int main( void )
+static void scanf_sample(void)
 {
-
     int i = 0;
     int j = 5;
 
@@ -28,6 +30,14 @@ int main( void )
     sum(&i, &j);
 
     printf("%d\n", i);
+}
+
+int main( void )
+{
+	if ( !AVOID_INTERACTION )
+		scanf_sample();
+
+	array_shuffle_sample();
 
     return 0;
 
