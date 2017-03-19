@@ -34,6 +34,8 @@ static void array_printout(int *array)
 		}
 }
 
+/* http://stackoverflow.com/questions/6127503/shuffle-array-in-c */
+
 static void array_shuffle(int *array)
 {
 	if ( ARRAY_SIZE > 2 )
