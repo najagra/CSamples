@@ -53,20 +53,25 @@ static void delete_list()
 
 	if (head != NULL)
 	{
-		el = head;
-		free(head);
+		do
+		{
+			el = head;
+			head = head->next;
+			free(el);
+		}
+		while(head != NULL);
 	}
 	else
 		return;
 
-	while(el->next != NULL)
-	{
-		el = el->next;
-		free(el);
-	}
-
 	head = NULL;
 	tail = NULL;
+}
+
+void test_struct_param_by_value(struct point p)
+{
+	printf("(%d ; %d)\n", p.x, p.y);
+	p.x = 100;
 }
 
 void lists_samples(void)
@@ -77,6 +82,8 @@ void lists_samples(void)
 	struct point p1 = { 2, 3 };
 	struct point p2 = { 4, 5 };
 	struct point p3 = { 6, 7 };
+
+	test_struct_param_by_value(p1);
 
 	add_point_to_list(&p1);
 	add_point_to_list(&p2);
