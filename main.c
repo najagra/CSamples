@@ -10,6 +10,7 @@
 
 #include "array_samples.h"
 #include "time_samples.h"
+#include "lists_samples.h"
 
 #define AVOID_INTERACTION 1
 
@@ -43,6 +44,8 @@ int main(void)
 	array_shuffle_sample();
 
 	time_sample();
+
+	lists_samples();
 
     return EXIT_SUCCESS;
 }
