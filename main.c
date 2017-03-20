@@ -6,7 +6,10 @@
  */
 
 #include <stdio.h>
-#include "arrays.h"
+#include <stdlib.h>
+
+#include "array_samples.h"
+#include "time_samples.h"
 
 #define AVOID_INTERACTION 1
 
@@ -32,13 +35,14 @@ static void scanf_sample(void)
     printf("%d\n", i);
 }
 
-int main( void )
+int main(void)
 {
 	if ( !AVOID_INTERACTION )
 		scanf_sample();
 
 	array_shuffle_sample();
 
-    return 0;
+	time_sample();
 
+    return EXIT_SUCCESS;
 }

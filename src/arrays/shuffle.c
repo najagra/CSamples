@@ -7,7 +7,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../arrays.h"
+
+#include "../../array_samples.h"
 
 #define ARRAY_SIZE 100
 #define ROW_SIZE   10
@@ -35,7 +36,15 @@ static void array_printout(int *array)
 		}
 }
 
-/* http://stackoverflow.com/questions/6127503/shuffle-array-in-c */
+/* http://stackoverflow.com/questions/6127503/shuffle-array-in-c
+ * http://benpfaff.org/writings/clc/shuffle.html
+ *
+ * http://stackoverflow.com/questions/33380282/how-does-rand-work-in-c
+ * http://stackoverflow.com/questions/2999075/generate-a-random-number-within-range/2999130#2999130
+ * http://stackoverflow.com/questions/288739/generate-random-numbers-uniformly-over-an-entire-range/288869#288869
+ *
+ * http://www.cprogramming.com/tutorial/random.html
+ */
 
 static void array_shuffle(int *array)
 {
@@ -51,7 +60,7 @@ static void array_shuffle(int *array)
 	}
 }
 
-void array_shuffle_sample ( void )
+void array_shuffle_sample(void)
 {
 	int array[ARRAY_SIZE];
 
