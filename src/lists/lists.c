@@ -9,87 +9,83 @@
 #include <stdlib.h>
 #include "lists.h"
 
-static void add_point_to_list(struct point *p)
+void add_point_to_list_tail(struct element **head, struct point *p)
 {
-	struct element *el = (struct element*)malloc(sizeof(struct element));
+	struct element *el = ( struct element* ) malloc ( sizeof ( struct element ) );
 
 	el->item = p;
 	el->next = NULL;
 
-	if (head==NULL)
+	if ( *head == NULL )
 	{
-		head = el;
-		tail = head;
+		*head = el;
 	}
 	else
 	{
+		struct element *tail = *head;
+
+		while( tail->next != NULL )
+		{
+			tail = tail->next;
+		}
+
 		tail->next = el;
-		tail = el;
 	}
 }
 
-static void print_all_points_from_list()
+void print_all_points_from_list(struct element **head)
 {
-	struct element *el;
-
-	if (head != NULL)
+	if ( *head != NULL )
 	{
-		el = head;
-		printf("(%d ; %d)\n", el->item->x, el->item->y);
+		struct element *el = *head;
+
+		do
+		{
+			printf( "(%d ; %d)\n", el->item->x, el->item->y );
+			el = el->next;
+		}
+		while( el != NULL );
 	}
 	else
 		return;
-
-	while(el->next != NULL)
-	{
-		el = el->next;
-		printf("(%d ; %d)\n", el->item->x, el->item->y);
-	}
 }
 
-static void delete_list()
+void delete_list(struct element **head)
 {
-	struct element *el;
-
-	if (head != NULL)
+	if ( *head != NULL )
 	{
 		do
 		{
-			el = head;
-			head = head->next;
+			struct element *el = *head;
+			*head = (*head)->next;
 			free(el);
 		}
-		while(head != NULL);
+		while( *head != NULL );
 	}
 	else
 		return;
-
-	head = NULL;
-	tail = NULL;
-}
-
-void test_struct_param_by_value(struct point p)
-{
-	printf("(%d ; %d)\n", p.x, p.y);
-	p.x = 100;
 }
 
 void lists_samples(void)
 {
-	head = NULL;
-	tail = NULL;
+	struct element *head_one = NULL;
+	struct element *head_two = NULL;
 
 	struct point p1 = { 2, 3 };
 	struct point p2 = { 4, 5 };
 	struct point p3 = { 6, 7 };
 
-	test_struct_param_by_value(p1);
+	add_point_to_list_tail(&head_one, &p1);
+	add_point_to_list_tail(&head_one, &p2);
+	add_point_to_list_tail(&head_one, &p3);
 
-	add_point_to_list(&p1);
-	add_point_to_list(&p2);
-	add_point_to_list(&p3);
+	add_point_to_list_tail(&head_two, &p3);
+	add_point_to_list_tail(&head_two, &p2);
+	add_point_to_list_tail(&head_two, &p1);
 
-	print_all_points_from_list();
+	print_all_points_from_list(&head_one);
+	print_all_points_from_list(&head_two);
 
-	delete_list();
+	delete_list(&head_one);
+	delete_list(&head_two);
 }
