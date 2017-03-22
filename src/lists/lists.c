@@ -13,7 +13,9 @@ void add_point_to_list_tail(struct element **head, struct point *p)
 {
 	struct element *el = ( struct element* ) malloc ( sizeof ( struct element ) );
 
-	el->item = p;
+	el->item = ( struct point* ) malloc ( sizeof ( struct point ) );
+	el->item->x = p->x;
+	el->item->y = p->y;
 	el->next = NULL;
 
 	if ( *head == NULL )
@@ -82,6 +84,7 @@ void delete_list(struct element **head)
 		{
 			struct element *el = *head;
 			*head = (*head)->next;
+			free(el->item);
 			free(el);
 		}
 		while( *head != NULL );
