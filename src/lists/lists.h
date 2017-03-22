@@ -21,6 +21,7 @@ struct element
 };
 
 void add_point_to_list_tail(struct element **head, struct point *p);
+void reverse_the_list(struct element **head, struct element **new_head);
 void print_all_points_from_list(struct element **head);
 void delete_list(struct element **head);
 
