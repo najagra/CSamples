@@ -8,22 +8,28 @@
 #ifndef SRC_LISTS_LISTS_H_
 #define SRC_LISTS_LISTS_H_
 
-struct point
+typedef struct _point
 {
 	int x;
 	int y;
-};
+} point;
 
-struct element
+/*
+ * struct _element contains ptr to itself
+ */
+
+typedef struct _element element;
+
+struct _element
 {
-	struct point *item;
-	struct element *next;
+	point *item;
+	element *next;
 };
 
-void add_point_to_list_tail(struct element **head, struct point *p);
-void reverse_the_list(struct element **head, struct element **new_head);
-void print_all_points_from_list(struct element **head);
-void delete_list(struct element **head);
+void add_point_to_list_tail(element **head, point *p);
+void reverse_the_list(element **head, element **new_head);
+void print_all_points_from_list(element **head);
+void delete_list(element **head);
 
 void lists_samples(void);
 

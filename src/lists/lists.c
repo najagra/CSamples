@@ -9,11 +9,11 @@
 #include <stdlib.h>
 #include "lists.h"
 
-void add_point_to_list_tail(struct element **head, struct point *p)
+void add_point_to_list_tail(element **head, point *p)
 {
-	struct element *el = ( struct element* ) malloc ( sizeof ( struct element ) );
+	element *el = ( element* ) malloc ( sizeof ( element ) );
 
-	el->item = ( struct point* ) malloc ( sizeof ( struct point ) );
+	el->item = ( point* ) malloc ( sizeof ( point ) );
 	el->item->x = p->x;
 	el->item->y = p->y;
 	el->next = NULL;
@@ -24,7 +24,7 @@ void add_point_to_list_tail(struct element **head, struct point *p)
 	}
 	else
 	{
-		struct element *tail = *head;
+		element *tail = *head;
 
 		while( tail->next != NULL )
 		{
@@ -35,18 +35,18 @@ void add_point_to_list_tail(struct element **head, struct point *p)
 	}
 }
 
-void reverse_the_list(struct element **head, struct element **new_head)
+void reverse_the_list(element **head, element **new_head)
 {
 	if ( *head != NULL )
 	{
-		struct element *el = *head;
-		struct element *prev_element = NULL;
+		element *el = *head;
+		element *prev_element = NULL;
 
 		while ( el != NULL )
 		{
-			*new_head = ( struct element* ) malloc ( sizeof ( struct element ) );
+			*new_head = ( element* ) malloc ( sizeof ( element ) );
 
-			(*new_head)->item = ( struct point* ) malloc ( sizeof ( struct point ) );
+			(*new_head)->item = ( point* ) malloc ( sizeof ( point ) );
 			(*new_head)->item->x = el->item->x;
 			(*new_head)->item->y = el->item->y;
 			(*new_head)->next = prev_element;
@@ -59,11 +59,11 @@ void reverse_the_list(struct element **head, struct element **new_head)
 		return;
 }
 
-void print_all_points_from_list(struct element **head)
+void print_all_points_from_list(element **head)
 {
 	if ( *head != NULL )
 	{
-		struct element *el = *head;
+		element *el = *head;
 
 		do
 		{
@@ -76,13 +76,13 @@ void print_all_points_from_list(struct element **head)
 		return;
 }
 
-void delete_list(struct element **head)
+void delete_list(element **head)
 {
 	if ( *head != NULL )
 	{
 		do
 		{
-			struct element *el = *head;
+			element *el = *head;
 			*head = (*head)->next;
 			free(el->item);
 			free(el);
@@ -95,14 +95,14 @@ void delete_list(struct element **head)
 
 void lists_samples(void)
 {
-	struct element *head_one = NULL;
-	struct element *head_two = NULL;
+	element *head_one = NULL;
+	element *head_two = NULL;
 
-	struct element *head_one_reversed = NULL;
+	element *head_one_reversed = NULL;
 
-	struct point p1 = { 2, 3 };
-	struct point p2 = { 4, 5 };
-	struct point p3 = { 6, 7 };
+	point p1 = { 2, 3 };
+	point p2 = { 4, 5 };
+	point p3 = { 6, 7 };
 
 	add_point_to_list_tail(&head_one, &p1);
 	add_point_to_list_tail(&head_one, &p2);
