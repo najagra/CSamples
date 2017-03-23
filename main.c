@@ -47,5 +47,7 @@ int main(void)
 
 	lists_samples();
 
+	run_simple_arrays();
+
     return EXIT_SUCCESS;
 }
