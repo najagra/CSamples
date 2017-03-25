@@ -13,35 +13,11 @@
 #include "lists_samples.h"
 #include "guidelines.h"
 
-#define AVOID_INTERACTION 1
+#define AVOID_INTERACTION 0
 
-static void sum(int *a, int *b)
-{
-	*a += *b;
-}
-
-static void scanf_sample(void)
-{
-    int i = 0;
-    int j = 5;
-
-    printf("Get item: ");
-
-    fflush(stdout);
-
-    scanf("%d", &i);
-    printf("%d\n", i);
-
-    sum(&i, &j);
-
-    printf("%d\n", i);
-}
 
 int main(void)
 {
-	if ( !AVOID_INTERACTION )
-		scanf_sample();
-
 	array_shuffle_sample();
 
 	time_sample();
@@ -51,6 +27,13 @@ int main(void)
 	run_simple_arrays();
 
 	test_simple_types();
+
+	do_some_math();
+
+	if ( !AVOID_INTERACTION )
+	{
+		calculate_avg_hourly_pay_rate();
+	}
 
     return EXIT_SUCCESS;
 }
