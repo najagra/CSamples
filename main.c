@@ -11,6 +11,7 @@
 #include "array_samples.h"
 #include "time_samples.h"
 #include "lists_samples.h"
+#include "guidelines.h"
 
 #define AVOID_INTERACTION 1
 
@@ -48,6 +49,8 @@ int main(void)
 	lists_samples();
 
 	run_simple_arrays();
+
+	test_simple_types();
 
     return EXIT_SUCCESS;
 }
