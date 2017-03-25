@@ -9,7 +9,9 @@
 #define SRC_GUIDELINES_H_
 
 void test_simple_types();
-void do_some_math();
+
+void simple_calculator();
 void calculate_avg_hourly_pay_rate();
+void do_some_math();
 
 #endif /* SRC_GUIDELINES_H_ */

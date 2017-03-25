@@ -13,7 +13,7 @@
 #include "lists_samples.h"
 #include "guidelines.h"
 
-#define AVOID_INTERACTION 0
+#define AVOID_INTERACTION 1
 
 
 int main(void)
@@ -33,6 +33,7 @@ int main(void)
 	if ( !AVOID_INTERACTION )
 	{
 		calculate_avg_hourly_pay_rate();
+		simple_calculator();
 	}
 
     return EXIT_SUCCESS;

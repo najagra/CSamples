@@ -25,15 +25,10 @@ static void print_an_array(void *array, int array_type, int array_length)
 {
 	for ( int i=0 ; i<array_length ; i++ )
 	{
-		printf("[%d] = %p = ", i, array+i );
-
 		switch ( array_type )
 		{
-			/*
-			 * *((int*)array+i)
-			 */
-			case 1: printf("%d\n", (( int*)array)[i] ); break;
-			case 2: printf("%c\n", ((char*)array)[i] ); break;
+			case 1: printf("[%d] = %p = %d\n", i, &(( int*)array)[i], *(( int*)array+i) ); break;
+			case 2: printf("[%d] = %p = %c\n", i, &((char*)array)[i], *((char*)array+i) ); break;
 		}
 	}
 }
