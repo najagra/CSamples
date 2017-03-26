@@ -8,8 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../../array_samples.h"
-
 #define ARRAY_LENGTH 10
 
 typedef enum _PTYPE { PINT = 1, PCHAR = 2 } PTYPE;

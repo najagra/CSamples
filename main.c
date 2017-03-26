@@ -8,10 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "array_samples.h"
-#include "time_samples.h"
-#include "lists_samples.h"
-#include "guidelines.h"
+#include "samples.h"
 
 #define AVOID_INTERACTION 1
 

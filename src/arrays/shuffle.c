@@ -8,8 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "../../array_samples.h"
-
 #define ARRAY_SIZE 100
 #define ROW_SIZE   10
 #define SEED       0
