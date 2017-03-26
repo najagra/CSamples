@@ -14,4 +14,6 @@ void simple_calculator();
 void calculate_avg_hourly_pay_rate();
 void do_some_math();
 
+void run_simple_strings();
+
 #endif /* SRC_GUIDELINES_H_ */

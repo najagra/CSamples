@@ -15,7 +15,6 @@
 
 #define AVOID_INTERACTION 1
 
-
 int main(void)
 {
 	array_shuffle_sample();
@@ -23,8 +22,6 @@ int main(void)
 	time_sample();
 
 	lists_samples();
-
-	run_simple_arrays();
 
 	test_simple_types();
 
@@ -34,7 +31,10 @@ int main(void)
 	{
 		calculate_avg_hourly_pay_rate();
 		simple_calculator();
+		run_simple_arrays();
 	}
+
+	run_simple_strings();
 
     return EXIT_SUCCESS;
 }
