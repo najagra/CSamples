@@ -31,6 +31,4 @@ void reverse_the_list(element **head, element **new_head);
 void print_all_points_from_list(element **head);
 void delete_list(element **head);
 
-void lists_samples(void);
-
 #endif /* SRC_LISTS_LISTS_H_ */

@@ -93,7 +93,7 @@ void delete_list(element **head)
 		return;
 }
 
-void lists_samples(void)
+void lists_samples()
 {
 	element *head_one = NULL;
 	element *head_two = NULL;

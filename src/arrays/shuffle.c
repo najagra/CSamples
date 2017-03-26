@@ -58,7 +58,7 @@ static void array_shuffle(int *array)
 	}
 }
 
-void array_shuffle_sample(void)
+void array_shuffle_sample()
 {
 	int array[ARRAY_SIZE];
 

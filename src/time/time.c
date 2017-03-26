@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <time.h>
 
-void time_sample(void)
+void time_sample()
 {
 	time_t max_time_val = 0x7FFFFFFF;
 

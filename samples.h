@@ -16,11 +16,11 @@ void do_some_math();
 
 void run_simple_strings();
 
-void time_sample(void);
+void time_sample();
 
-void array_shuffle_sample(void);
-void run_simple_arrays(void);
+void array_shuffle_sample();
+void run_simple_arrays();
 
-void lists_samples(void);
+void lists_samples();
 
 #endif /* SAMPLES_H_ */
