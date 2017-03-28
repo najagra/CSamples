@@ -88,4 +88,21 @@ void run_simple_strings()
   		printf("%s : %zu\n", names[i], strlen(names[i]) );
   	}
 
+  	/*
+  	 * STRCMP and STRNCMP <string.h>
+  	 * the number of characters to be compared is specified by a third argument, which is an integer of type size_t
+  	 */
+
+  	char str1[] = "Test";
+  	char str2[] = "Test";
+
+  	printf("String comparison return value: %d\n", strcmp(str1, str2) );
+
+  	char str3[] = "TestD";
+  	char str4[] = "TestA";
+
+  	printf("String comparison return value: %d\n", strcmp(str3, str4) );
+
+  	printf("String comparison return value: %d\n", strncmp(str3, str4, 4) );
+
 }
