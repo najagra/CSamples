@@ -23,4 +23,6 @@ void run_simple_arrays();
 
 void lists_samples();
 
+void game_of_pointers();
+
 #endif /* SAMPLES_H_ */

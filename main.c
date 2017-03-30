@@ -33,5 +33,7 @@ int main(void)
 
 	run_simple_strings();
 
+	game_of_pointers();
+
     return EXIT_SUCCESS;
 }
